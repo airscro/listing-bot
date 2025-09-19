@@ -1,0 +1,23 @@
+{
+  "name": "listing-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "networth_api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airscro/listing-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airscro/listing-bot/issues"
+  },
+  "homepage": "https://github.com/airscro/listing-bot#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "skyhelper-networth": "^2.4.3"
+  }
+}

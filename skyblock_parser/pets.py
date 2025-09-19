@@ -1,6 +1,6 @@
-from skyblock.constants import *
-from skyblock.exceptions import SkyblockParserException
-from skyblock.renderer import render
+from skyblock_parser.constants import *
+from skyblock_parser.exceptions import SkyblockParserException
+from skyblock_parser.renderer import render
 
 def format_stat(stat):
     formatted_stat = "{:.2f}".format(stat).rstrip("0").rstrip(".")

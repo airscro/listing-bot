@@ -1,8 +1,8 @@
-from skyblock.exceptions import *
-from skyblock.constants import *
-from skyblock.levels import *
-from skyblock.renderer import render
-from skyblock.pets import Pet
+from skyblock_parser.exceptions import *
+from skyblock_parser.constants import *
+from skyblock_parser.levels import *
+from skyblock_parser.renderer import render
+from skyblock_parser.pets import Pet
 import gzip
 import base64
 import struct

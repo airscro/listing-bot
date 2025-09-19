@@ -14,11 +14,11 @@ async def on_ready():
     print(f'Started - {bot.user} (ID: {bot.user.id})')
     
     bot_status = status(BOT)
-    activity = activity(BOT)
+    bot_activity = activity(BOT)
     
     await bot.change_presence(
         status=bot_status,
-        activity=activity
+        activity=bot_activity
     )
 
 def load_extensions():
