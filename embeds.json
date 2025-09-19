@@ -1,0 +1,12 @@
+{
+  "panel": {
+    "title": "embed",
+    "description": "Just an example embed Ig",
+    "color": "0x59DD94"
+  },
+  "start_exchange": {
+    "title": "Select Sending Method",
+    "description": "Please select what you'd like to send using the dropdown below!",
+    "color": "0x59DD94"
+  }
+}

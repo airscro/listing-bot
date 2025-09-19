@@ -1,0 +1,221 @@
+cata_levels = {
+        "1": 50, "2": 125, "3": 235, "4": 395, "5": 625, "6": 955, "7": 1425, "8": 2095, "9": 3045,
+        "10": 4385, "11": 6275, "12": 8940, "13": 12700, "14": 17960, "15": 25340, "16": 35640,
+        "17": 50040, "18": 70040, "19": 97640, "20": 135640, "21": 188140, "22": 259640, "23": 356640,
+        "24": 488640, "25": 668640, "26": 911640, "27": 1239640, "28": 1684640, "29": 2284640,
+        "30": 3084640, "31": 4149640, "32": 5559640, "33": 7459640, "34": 9959640, "35": 13259640,
+        "36": 17559640, "37": 23159640, "38": 30359640, "39": 39559640, "40": 51559640, "41": 66559640,
+        "42": 85559640, "43": 109559640, "44": 139559640, "45": 177559640, "46": 225559640,
+        "47": 285559640, "48": 360559640, "49": 453559640, "50": 569809640
+}
+
+def get_cata_lvl(exp):
+    for level in cata_levels:
+        if exp >= cata_levels['50']:
+            xp_above_50 = exp - cata_levels['50']
+            levels = xp_above_50 / 200000000
+            return 50 + levels
+
+
+        if cata_levels[level] > exp:
+            if int(level) == 1:
+                level = str(2)
+            lowexp = cata_levels[str(int(level) - 1)]
+            highexp = cata_levels[level]
+            difference = highexp - lowexp
+            extra = exp - lowexp
+            percentage = (extra / difference)
+            return (int(level) - 1) + percentage
+
+
+SKILL_MAX_LEVELS = {
+    "mining": {
+        "maxLevel": 60,
+    },
+
+    "foraging": {
+        "maxLevel": 50,
+    },
+
+    "enchanting": {
+        "maxLevel": 60,
+    },
+
+    "farming": {
+        "maxLevel": 60,
+    },
+
+    "combat": {
+        "maxLevel": 60,
+    },
+
+    "fishing": {
+        "maxLevel": 50,
+    },
+
+    "alchemy": {
+        "maxLevel": 50,
+    },
+
+    "taming": {
+        "maxLevel": 60,
+    },
+
+    "social": {
+        "maxLevel": 25,
+    },
+
+    "runecrafting": {
+        "maxLevel": 25,
+    },
+
+    "carpentry": {
+        "maxLevel": 50,
+    },
+
+    "hunting": {
+        "maxLevel": 25,
+    }
+}
+
+
+def get_hotm_level(exp):
+    levels = {
+        "1": 0, "2": 3000, "3": 12000, "4": 37000, "5": 97000, "6": 197000, "7": 347000, "8": 557000, "9": 847000, "10": 1247000
+    }
+    for level in levels:
+        if exp >= levels['10']:
+            return 10
+        
+        if levels[level] > exp:
+            return int(level) - 1
+        
+    return 10
+
+revenant = {"0": 0, "1": 5, "2": 15, "3": 200, "4": 1000,
+        "5": 5000, "6": 20000, "7": 100000, "8": 400000, "9": 1000000}
+spider = {"0": 0, "1": 5, "2": 15, "3": 200, "4": 1000,
+            "5": 5000, "6": 20000, "7": 100000, "8": 400000, "9": 1000000}
+sven = {"0": 0, "1": 10, "2": 30, "3": 250, "4": 1500, "5": 5000,
+        "6": 20000, "7": 100000, "8": 400000, "9": 1000000}
+enderman = {"0": 0, "1": 10, "2": 30, "3": 250, "4": 1500,
+            "5": 5000, "6": 20000, "7": 100000, "8": 400000, "9": 1000000}
+blaze = {"0": 0, "1": 10, "2": 30, "3": 250, "4": 1500,
+            "5": 5000, "6": 20000, "7": 100000, "8": 400000, "9": 1000000}
+vampire = {"0": 0, "1": 20, "2": 75, "3": 240, "4": 840, "5": 2400}
+
+
+        
+def get_slayer_level(slayer_type, exp):
+
+    if slayer_type == "zombie":
+        levels = revenant
+    elif slayer_type == "spider":
+        levels = spider
+    elif slayer_type == "wolf":
+        levels = sven
+    elif slayer_type == "enderman":
+        levels = enderman
+    elif slayer_type == "blaze":
+        levels = blaze
+    elif slayer_type == "vampire":
+        levels = vampire
+
+    for level in levels:
+        try:
+            if exp >= levels['9']:
+                return 9
+        except:
+            if exp >= levels['5']:
+                return 5
+
+        if levels.get(level) > exp:
+            lowexp = levels[str(int(level) - 1)]
+            highexp = levels.get(level)
+            difference = highexp - lowexp
+            extra = exp - lowexp
+            percentage = (extra / difference)
+            return (int(level) - 1) + percentage
+
+
+skill_levels = {
+    "0": 0, "1": 50, "2": 175, "3": 375, "4": 675, "5": 1175, "6": 1925, "7": 2925, "8": 4425, "9": 6425,
+    "10": 9925, "11": 14925, "12": 22425, "13": 32425, "14": 47425, "15": 67425, "16": 97425, "17": 147425,
+    "18": 222425, "19": 322425, "20": 522425, "21": 822425, "22": 1222425, "23": 1722425, "24": 2322425,
+    "25": 3022425, "26": 3822425, "27": 4722425, "28": 5722425, "29": 6822425, "30": 8022425, "31": 9322425,
+    "32": 10722425, "33": 12222425, "34": 13822425, "35": 15522425, "36": 17322425, "37": 19222425,
+    "38": 21222425, "39": 23322425, "40": 25522425, "41": 27822425, "42": 30222425, "43": 32722425,
+    "44": 35322425, "45": 38072425, "46": 40972425, "47": 44072425, "48": 47472425, "49": 51172425,
+    "50": 55172425, "51": 59472425, "52": 64072425, "53": 68972425, "54": 74172425, "55": 79672425,
+    "56": 85472425, "57": 91572425, "58": 97972425, "59": 104672425, "60": 111672425
+}
+runecrafting_levels = {
+    "0": 0, "1": 50, "2": 150, "3": 275, "4": 435, "5": 635, "6": 885, "7": 1200, "8": 1600, "9": 2100,
+    "10": 2725, "11": 3510, "12": 4510, "13": 5760, "14": 7325, "15": 9325, "16": 11825, "17": 14950, 
+    "18": 18950, "19": 23950, "20": 30200, "21": 38050, "22": 47850, "23": 60100, "24": 75400, "25": 94400
+}
+social_levels = {
+    "0": 0, "1": 50, "2": 150, "3": 300, "4": 550, "5": 1050, "6": 1800, "7": 2800, "8": 4050, "9": 5550,
+    "10": 7550, "11": 10050, "12": 13050, "13": 16800, "14": 21300, "15": 27300, "16": 35300, "17": 45300,
+    "18": 57800, "19": 72800, "20": 92800, "21": 117800, "22": 147800, "23": 182800, "24": 222800, "25": 272800
+}
+def get_skill_lvl(skill_type, exp):
+    if skill_type == "runecrafting":
+        for level in runecrafting_levels:
+            if exp >= 94400:
+                return 25
+
+            if runecrafting_levels[level] > exp:
+                lowexp = runecrafting_levels[str(int(level) - 1)]
+                highexp = runecrafting_levels[level]
+                difference = highexp - lowexp
+                extra = exp - lowexp
+                percentage = (extra / difference)
+                return (int(level) - 1) + percentage
+            
+    if skill_type == "social":
+        for level in social_levels:
+            if exp >= 272800:
+                return 25
+
+            if social_levels[level] > exp:
+                lowexp = social_levels[str(int(level) - 1)]
+                highexp = social_levels[level]
+                difference = highexp - lowexp
+                extra = exp - lowexp
+                percentage = (extra / difference)
+                return (int(level) - 1) + percentage
+            
+    for level in skill_levels:
+        if exp >= skill_levels[str(SKILL_MAX_LEVELS[skill_type]['maxLevel'])]:
+            return SKILL_MAX_LEVELS[skill_type]['maxLevel']
+
+        if skill_levels[level] > exp:
+            lowexp = skill_levels[str(int(level) - 1)]
+            highexp = skill_levels[level]
+            difference = highexp - lowexp
+            extra = exp - lowexp
+            percentage = (extra / difference)
+            return (int(level) - 1) + percentage
+        
+
+garden_levels = {
+    "1": 0, "2": 70, "3": 140, "4": 280, "5": 520, "6": 1120, "7": 2620, "8": 4620, "9": 7120, "10": 10120, 
+    "11": 20120, "12": 30120, "13": 40120, "14": 50120, "15": 60120
+}
+
+def get_garden_lvl(exp):
+    for level in garden_levels:
+
+        if exp >= garden_levels['15']:
+            return 15
+
+        if garden_levels[level] > exp:
+            lowexp = garden_levels[str(int(level) - 1)]
+            highexp = garden_levels[level]
+            difference = highexp - lowexp
+            extra = exp - lowexp
+            percentage = (extra / difference)
+            return (int(level) - 1) + percentage
+        
+    return 0
