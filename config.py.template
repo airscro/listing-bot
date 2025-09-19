@@ -1,0 +1,14 @@
+BOT = {
+    "TOKEN": 'YOUR_DISCORD_BOT_TOKEN_HERE',
+    "COGS_FOLDER": "./commands",
+    "STATUS": "Accounts",
+    "PRESENCE": "watching",
+    "BOT_STATUS": "idle"
+
+}
+
+OWNER_IDS = [
+    1292032485601050667,
+]
+
+HYPIXEL_API_KEY = ''
